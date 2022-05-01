@@ -1,0 +1,32 @@
+{
+    "name": "tbcd/excel-utils",
+    "type": "library",
+    "description": "Easy way to create Excel worksheets, spreadsheets and files",
+    "authors": [
+        {
+            "name": "Thomas Beauchataud"
+        }
+    ],
+    "license": "MIT",
+    "keywords": [
+        "excel",
+        "worksheet",
+        "spreadsheet",
+        "sheet"
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "version": "1.0.0",
+    "require": {
+        "php": ">=8.0.2",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "phpoffice/phpspreadsheet": "^1.19",
+        "symfony/framework-bundle": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TBCD\\Excel\\": "src/"
+        }
+    }
+}
