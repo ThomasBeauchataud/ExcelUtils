@@ -17,19 +17,21 @@ class ExcelFileFactory
 
     private ExcelSpreadsheetFactory $excelSpreadsheetFactory;
     private Filesystem $filesystem;
-    private string $workspace = '.';
+    private string $workspace;
 
     /**
      * @param ExcelSpreadsheetFactory $excelSpreadsheetFactory
      * @param ParameterBagInterface|null $parameterBag
+     * @param string $workspace
      */
-    public function __construct(ExcelSpreadsheetFactory $excelSpreadsheetFactory, ParameterBagInterface $parameterBag = null)
+    public function __construct(ExcelSpreadsheetFactory $excelSpreadsheetFactory, ParameterBagInterface $parameterBag = null, string $workspace = '.')
     {
         $this->excelSpreadsheetFactory = $excelSpreadsheetFactory;
         $this->filesystem = new Filesystem();
         if ($parameterBag && $parameterBag->has('kernel.project_dir')) {
-            $this->workspace = $parameterBag->get('kernel.project_dir') . "\\var\\tmp\\";
+            $workspace = $parameterBag->get('kernel.project_dir') . "\\var\\tmp\\";
         }
+        $this->workspace = $workspace;
     }
 
 
