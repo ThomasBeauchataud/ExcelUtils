@@ -1,7 +1,6 @@
 # ExcelUtils
 
 This library to easily create excel worksheets, spreadsheets and files.
->This library is mainly used to send data report.
 
 ## Usage
 1. Inject the service from container if you have one or create it
@@ -14,8 +13,6 @@ public function __construct(ExcelFileFactory $excelFileFactory)
 }
 ```
 ```
-$excelWorksheetFactory = new ExcelWorksheetFactory();
-$excelSpreadsheetFactory = new ExcelSpreadsheetFactory($worksheetFactory);
 $excelFileFactory = new ExcelFileFactory($spreadsheetFactory);
 ```
 2. Create the file with your data
@@ -33,7 +30,7 @@ $data = [
     ]
 ];
 
-$filePath = $fileFactory->createFileWithData(new WorksheetData($data, 'my-sheet-name'));
+$filePath = $fileFactory->createFileWithData(new WorksheetData($data, 'my-sheet-name'), 'my_file.xlsx');
 ```
 3. Get then result below
 

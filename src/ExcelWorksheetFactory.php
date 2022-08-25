@@ -43,6 +43,9 @@ class ExcelWorksheetFactory
             $row = array_values($row);
             foreach ($row as $k => $column) {
                 $k = $k + 1;
+                if ($column instanceof \BackedEnum) {
+                    $column = $column->value;
+                }
                 $worksheet->setCellValue($aAlphabet[$k] . $i, $column);
             }
         }

@@ -19,7 +19,7 @@ class ExcelSpreadsheetFactory
     /**
      * @param ExcelWorksheetFactory $excelWorksheetFactory
      */
-    public function __construct(ExcelWorksheetFactory $excelWorksheetFactory)
+    public function __construct(ExcelWorksheetFactory $excelWorksheetFactory = new ExcelWorksheetFactory())
     {
         $this->excelWorksheetFactory = $excelWorksheetFactory;
     }
