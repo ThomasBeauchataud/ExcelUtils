@@ -45,8 +45,9 @@ class Test extends TestCase
             ]
         ];
 
-        $filePath = $fileFactory->createFileWithData(new WorksheetData($data, 'test'));
-        $this->assertTrue($filesystem->exists($filePath));
-        $filesystem->remove($filePath);
+        $filepath = sys_get_temp_dir() . '/' . uniqid() . '.xlsx';
+        $fileFactory->createFileWithData(new WorksheetData($data, 'test'), $filepath);
+        $this->assertTrue($filesystem->exists($filepath));
+        $filesystem->remove($filepath);
     }
 }
